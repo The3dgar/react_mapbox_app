@@ -50,6 +50,8 @@ export const MapProvider = ({ children }: Props) => {
     }
 
     dispatch({ type: 'setMarkers', payload: newMarkers });
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [places]);
 
   const setMap = (map: Map) => {
@@ -90,6 +92,8 @@ export const MapProvider = ({ children }: Props) => {
       const newCoord: [number, number] = [coord[0], coord[1]];
       bounds.extend(newCoord);
     }
+
+    console.log(kms, minutes);
 
     map?.fitBounds(bounds, { padding: 200 });
 
